@@ -10,7 +10,7 @@ def remove_leading_zeros(input_file, output_file, column_name):
     """
     
     df = pd.read_csv(input_file)
-    df[column_name] = df[column_name].str.lstrip('0')
+    df[column_name] = df[column_name]astype(str).str.lstrip('0')
     df.to_csv(output_file, index=False)
 
 
